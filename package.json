@@ -11,8 +11,7 @@
   },
   "packageManager": "yarn@3.5.1",
   "dependencies": {
-    "discord.js": "^14.11.0",
-    "discordx": "^11.7.6"
+    "discord.js": "^14.11.0"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
