@@ -1,0 +1,14 @@
+# Ignore all
+*
+# But these
+!.gitignore
+!.nvmrc
+!.prettierrc.json
+!.yarnrc.yml
+!.eslintignore
+!.eslintrc.json
+!package.json
+!tsconfig.json
+!README.md
+!src
+!src/*

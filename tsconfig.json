@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false,
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./src",
+  },
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
