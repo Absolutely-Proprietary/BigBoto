@@ -11,4 +11,4 @@
 !tsconfig.json
 !README.md
 !src
-!src/*
+!src/**
