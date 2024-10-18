@@ -17,7 +17,8 @@
   "packageManager": "yarn@3.5.0",
   "dependencies": {
     "discord.js": "^14.11.0",
-    "dotenv": "^16.1.2"
+    "dotenv": "^16.1.2",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
