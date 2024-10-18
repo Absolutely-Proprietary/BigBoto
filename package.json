@@ -14,7 +14,7 @@
     "start": "ts-node src/index.ts",
     "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.5.0",
   "dependencies": {
     "discord.js": "^14.11.0",
     "dotenv": "^16.1.2"
