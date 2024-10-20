@@ -1,40 +1,15 @@
-import { Client, EmbedBuilder, TextChannel } from 'discord.js';
+import { Client, TextChannel } from 'discord.js';
 import { fetchLatestNews } from '../services/newsService';
-import { NewsItem } from 'interfaces/News';
+import { embedConstructor } from './../utils/embedConstructor';
+import { generalChat } from './../utils/discord';
 
 export default (client: Client): void => {
   client.on('ready', async () => {
-    const extractSrc = (html: string): string | null => {
-      const match = html.match(/<img\s+[^>]*src="([^"]*)"/);
-      return match ? match[1] : null;
-    };
-
-    const embedConstructor = ({ title, link, image, summary }: NewsItem) => {
-      return new EmbedBuilder()
-        .setAuthor({
-          name: 'RPG Site',
-          url: 'https://www.rpgsite.net',
-          iconURL:
-            'https://images.rpgsite.net/image/da49c9a1/134219/boxart/RPG_Site_Logo_Sidebar_Render-2023.webp',
-        })
-        .setTitle(title || 'No title')
-        .setURL(link || 'https://www.rpgsite.net')
-        .setDescription(summary || 'No summary')
-        .setImage(extractSrc(image || '') || '')
-        .setFooter({
-          text: 'Date:',
-        })
-        .setTimestamp();
-    };
-
-    const channel = client.channels.cache.get(
-      '145615594991910912',
-    ) as TextChannel;
-
-    console.log('Estou rodando o news!')
+    const channel = generalChat(client) as TextChannel;
 
     setInterval(async () => {
       const news = await fetchLatestNews();
+      console.log('News:', news);
       if (!news) return;
 
       const embed = embedConstructor(news);
