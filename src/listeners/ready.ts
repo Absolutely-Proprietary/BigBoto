@@ -1,4 +1,4 @@
-import { Client, ActivityType, EmbedBuilder, TextChannel } from 'discord.js';
+import { Client, ActivityType } from 'discord.js';
 import { Commands } from '../Commands';
 
 export default (client: Client): void => {
