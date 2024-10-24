@@ -4,7 +4,7 @@ import { Commands } from '../Commands';
 export default (client: Client): void => {
   client.on('interactionCreate', async (interaction: Interaction) => {
     if (interaction.isCommand()) {
-      await handleSlashCommand(client, interaction);
+      return handleSlashCommand(client, interaction);
     }
   });
 };
@@ -17,7 +17,7 @@ const handleSlashCommand = async (
     command => command.name === interaction.commandName,
   );
   if (!slashCommand) {
-    interaction.followUp({ content: 'An error has occurred' });
+    await interaction.followUp({ content: 'An error has occurred' });
     return;
   }
 
