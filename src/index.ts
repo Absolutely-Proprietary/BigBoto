@@ -1,6 +1,5 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
-import http from 'http';
 
 import ready from './listeners/ready';
 import interactionCreate from './listeners/interactionCreate';
