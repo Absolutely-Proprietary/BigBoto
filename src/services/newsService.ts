@@ -11,7 +11,7 @@ export const fetchLatestNews = async (): Promise<NewsItem | null> => {
   const latestEntry = feed.items[0];
 
   if (latestEntry.id === latestNewsId) {
-    return null; // No new news
+    return null; 
   }
 
   latestNewsId = latestEntry.id;

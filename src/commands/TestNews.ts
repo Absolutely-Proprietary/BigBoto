@@ -1,9 +1,4 @@
-import {
-  CommandInteraction,
-  Client,
-  ApplicationCommandType,
-  InteractionResponse,
-} from 'discord.js';
+import { ApplicationCommandType, InteractionResponse } from 'discord.js';
 import { embedConstructor } from '../utils/embedConstructor';
 import { fetchLatestNews } from '../services/newsService';
 
@@ -13,10 +8,7 @@ export const TestNews: Command = {
   name: 'testnews',
   description: '[DEBUG] Test return news',
   type: ApplicationCommandType.ChatInput,
-  run: async (
-    client: Client,
-    interaction: CommandInteraction,
-  ): Promise<InteractionResponse<boolean>> => {
+  run: async (_, interaction): Promise<InteractionResponse<boolean>> => {
     if (!(interaction.user.id !== '142075485000695809')) {
       return interaction.reply('You are not allowed to use this command');
     }
@@ -26,4 +18,4 @@ export const TestNews: Command = {
     const embed = embedConstructor(news);
     return interaction.reply({ embeds: [embed] });
   },
-};
+} as Command;
