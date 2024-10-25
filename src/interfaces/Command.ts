@@ -1,7 +1,7 @@
-import {
-  CommandInteraction,
+import type {
   ChatInputApplicationCommandData,
   Client,
+  CommandInteraction,
   InteractionResponse,
 } from 'discord.js';
 
